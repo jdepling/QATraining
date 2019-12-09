@@ -2,13 +2,15 @@
 
 namespace QATraining
 {
+    /// <summary>
+    /// Class that changes based upon what I am teaching
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
         {
-            // Ask for the favorite number
+            // Write to the console
             Console.WriteLine("Hello World");
-
         }
     }
 }
