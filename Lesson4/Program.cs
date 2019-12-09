@@ -3,7 +3,7 @@
 namespace Lesson4
 {
     /// <summary>
-    /// Lesson 4: Methods and Lambdas
+    /// Lesson 4: Methods
     /// </summary>
     class Program
     {
