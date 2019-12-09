@@ -24,7 +24,6 @@ namespace Lesson4
             int enemyAttack    = 1;
             int enemyHealthBar = 5;
 
-
             // Turn one
             Console.WriteLine("You are facing an enemy. Here is what we know....");
             Console.WriteLine("Your health is {0}. Your attack strength is {1}. You have {2} potion(s). Each potion will give you 2 health points.", yourHealthBar, yourAttackStrength, potions);
@@ -87,7 +86,6 @@ namespace Lesson4
             Console.WriteLine("Your health is {0}. Your attack strength is {1}. You have {2} potion(s). Each potion will give you 2 health points.", yourHealthBar, yourAttackStrength, potions);
             Console.WriteLine("Your enemy's health is {0}. Your enemy's attack strength is {1}.", enemyHealthBar, enemyAttack);
 
-
             // Display options
             Console.WriteLine("Do you wish to fight or run or drink a potion?");
             Console.WriteLine("Fight = 1");
@@ -139,7 +137,6 @@ namespace Lesson4
              * over and over again.
              * I wish there was a way I could reuse code!
              */
-
 
         }
     }
