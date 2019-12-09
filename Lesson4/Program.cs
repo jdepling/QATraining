@@ -44,7 +44,8 @@ namespace Lesson4
             {
                 case Attack:
                     Console.WriteLine("You chose to attack. You punched that fool. You dealt {0} damage to your enemy", yourAttackStrength);
-                    // Decrease enemy's health
+
+                    // Decrease enemy's health by the amount of your attack strength
                     enemyHealthBar -= yourAttackStrength;
                         break;
 
@@ -80,7 +81,7 @@ namespace Lesson4
 
             // Enemy attacks
             Console.WriteLine("Enemy attacks dealing {0} damage to you", enemyAttack);
-            yourHealthBar -= enemyAttack;
+            yourHealthBar -= enemyAttack; // This decreases your health by whatever value is stored in "enemyAttack"
 
             // Turn 2
             Console.WriteLine("Your health is {0}. Your attack strength is {1}. You have {2} potion(s). Each potion will give you 2 health points.", yourHealthBar, yourAttackStrength, potions);
