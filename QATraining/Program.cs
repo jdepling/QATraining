@@ -9,8 +9,31 @@ namespace QATraining
     {
         static void Main(string[] args)
         {
-            // Write to the console
-            Console.WriteLine("Hello World");
+            // out
+            int quantityOfBurritos;
+            GiveMeFood(out quantityOfBurritos);
+            Console.WriteLine("How many burritos?: {0}", quantityOfBurritos);
+            // How many burritos?: 1
+
+            // ref
+            int numberOfBurritos = 1;
+            FeedMe(ref numberOfBurritos);
+            Console.WriteLine("How many burritos?: {0}", numberOfBurritos);
+            // How many burritos?: 2
         }
+
+        // out
+        public static void GiveMeFood(out int quantityOfBurritos)
+        {
+            quantityOfBurritos = 0;
+            quantityOfBurritos += 1;
+        }
+
+        // ref
+        public static void FeedMe(ref int quantityOfBurritos)
+        {
+            quantityOfBurritos += 1;
+        }
+
     }
 }
