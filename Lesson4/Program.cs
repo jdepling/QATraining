@@ -19,29 +19,30 @@ namespace Lesson4
 
         static void Main(string[] args)
         {
-            // Your character
+            // Your character's stats
             int yourAttackStrength = 1;
             int yourHealthBar      = 5;
             int potions            = 1;
             int currentAction      = 0;
 
-            // Your enemy
+            // Your enemy's stats
             int enemyAttack    = 1;
             int enemyHealthBar = 5;
 
             while (yourHealthBar > 0 && enemyHealthBar > 0)
             {
-                // Turn one
+                // Your turn
                 GetAction(ref currentAction, yourHealthBar, yourAttackStrength, potions, enemyHealthBar, enemyAttack);
 
                 // Evaluate your action
                 EvaluateAction(currentAction, ref enemyHealthBar, ref yourAttackStrength, ref potions, ref yourHealthBar);
 
-                // Enemy attacks
+                // Enemy's turn
                 if (enemyHealthBar > 0)
                     EnemyAttack(ref yourHealthBar, ref enemyAttack);
             }
 
+            // Report
             if (yourHealthBar > 0 && enemyHealthBar == 0)
             {
                 Console.WriteLine("Congratulations, you have won the fight!");
