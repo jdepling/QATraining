@@ -4,6 +4,11 @@ namespace Lesson4
 {
     /// <summary>
     /// Lesson 4: Methods
+    ///     - Pass by value
+    ///     - Pass by reference
+    ///         - ref
+    ///         - out
+    ///      - Importance of code reuse
     /// </summary>
     class Program
     {
