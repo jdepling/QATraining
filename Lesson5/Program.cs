@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Lesson5
 {
@@ -14,8 +15,8 @@ namespace Lesson5
 
             // Declare and Initialize an array at once
             string[] myFavoriteFoods = new string[4]; // This means this array can have 4 spots in it or 4 indices. 
-                                                     // Indices are plural for index. 0,1,2,3 are our 4 indexes/indices
-                                                    // You only do this when you know how big you want your array a head of time
+                                                      // Indices are plural for index. 0,1,2,3 are our 4 indexes/indices
+                                                      // You only do this when you know how big you want your array a head of time
 
             // Assign values to an array ... a really stupid way ... but it shows us about indexes/indices
             myFavoriteFoods[0] = "burgers";         // Index 0
@@ -36,26 +37,46 @@ namespace Lesson5
 
             // Iterating over the array. This means looping through an array. 
             // What this really means is we are going to go through all the values in the array and look at them
-            for(int i = 0; i < nicksFavoriteFoods.Length; i++) // => nicksFavoriteFoods.Length = 3
+            for (int i = 0; i < nicksFavoriteFoods.Length; i++) // => nicksFavoriteFoods.Length = 3
             {
                 Console.WriteLine(nicksFavoriteFoods[i]);
             }
 
             // An easier way to loop through an array
-            foreach(string food in nicksFavoriteFoods)
+            foreach (string food in nicksFavoriteFoods)
             {
                 Console.WriteLine(food);
             }
 
+            // Example with numbers
+            int[] numbers = { 10, 20, 30, 40 };
+            foreach(int number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
             // What foods do Nick and I have in common?
-           string[] foodsWeBothLike = FoodsInCommon(myFavoriteFoods, nicksFavoriteFoods);
-           Console.WriteLine("These are the foods that both Nick and I like...");
+            string[] foodsWeBothLike = FoodsInCommon(myFavoriteFoods, nicksFavoriteFoods);
+            Console.WriteLine("These are the foods that both Nick and I like...");
 
             foreach (string food in foodsWeBothLike)
             {
                 Console.WriteLine(food);
             }
 
+            // Lists
+            List<string> ChrisFavoriteFoods = new List<string>();
+            ChrisFavoriteFoods.Add("teriyaki");
+            ChrisFavoriteFoods.Add("steak");
+            ChrisFavoriteFoods.Add("fajitas");
+            ChrisFavoriteFoods.Add("tacos");
+            ChrisFavoriteFoods.Remove("tacos");
+
+            Console.WriteLine("Chris's favorite foods");
+            foreach (string foodItem in ChrisFavoriteFoods)
+            {
+                Console.WriteLine(foodItem);
+            }
         }
 
         /// <summary>
