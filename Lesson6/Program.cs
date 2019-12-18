@@ -31,8 +31,14 @@ namespace Lesson6
             Console.WriteLine("Using the built in ForEach method on a List:");
             theFoods.ForEach((food) => Console.WriteLine(food));
 
-            // Dictionaries ... this looks hard LOL
-            Dictionary<string, List<string>> FoodIndex = new Dictionary<string, List<string>>{ { "Adrianne", new List<string> { "Pizza" } } };
+            // Dictionaries
+            // Declare and initialize a dictionary
+            // This dictionary is nothing more than a key value pair
+            // The key is a string and the value is a List<string> ... list of strings
+            Dictionary<string, List<string>> FoodIndex = new Dictionary<string, List<string>>()
+            { 
+                { "Adrianne", new List<string> { "Pizza" } }
+            };
 
             // Lets make it more simple by first making a list. And then we will add these lists to the dictionary...
 
