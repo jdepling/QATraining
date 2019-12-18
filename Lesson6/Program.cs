@@ -88,8 +88,7 @@ namespace Lesson6
         {
             // LINQ
             return person1Foods.Intersect(person2Foods).ToList(); // Do you remember how hard to read this method was in the last lesson?
-            // Intersect returns an IEnumberable<string> so I need to call ToList() to make it a List
-            
+            // Intersect returns an IEnumberable<string> so I need to call ToList() to make it a List<string>
         }
     }
 }
