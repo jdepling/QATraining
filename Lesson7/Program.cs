@@ -13,9 +13,14 @@ namespace Lesson7
         {
             // Create our people, by calling the constructor
             Person adrianne = new Person("Adrianne", 21, Gender.Female);
-            Person chris    = new Person("Chris",    30, Gender.Male);
+            Person chris    = new Person("Chris",    25, Gender.Male);
             Person nick     = new Person("Nick",     12, Gender.Male);
+            Person matt     = new Person("Matt",     24, Gender.Male);
             Person justin   = new Person("Justin",   65, Gender.Male);
+
+            // Access the variables (known as fields) in an object using the dot (.) syntax
+            // How old is Justin?
+            Console.WriteLine("Justin is {0} years old", justin.Age);
 
             // Our people need favorite foods -- We will use the "Public" property FavoriteFoods and set it
             adrianne.FavoriteFoods = new List<string>()
