@@ -14,6 +14,11 @@ namespace Lesson7
         private readonly string _secret;
         private readonly string _password;
 
+        public Person()
+        {
+
+        }
+
         // A Constructor is the method you call to create your object.
         // It has the same name as your class name
         public Person(string name, int age, Gender gender)

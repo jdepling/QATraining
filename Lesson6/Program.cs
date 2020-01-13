@@ -35,7 +35,7 @@ namespace Lesson6
             // Declare and initialize a dictionary
             // This dictionary is nothing more than a key value pair
             // The key is a string and the value is a List<string> ... list of strings
-            Dictionary<string, List<string>> FoodIndex = new Dictionary<string, List<string>>()
+            var FoodIndex = new Dictionary<string, List<string>>()
             { 
                 { "Adrianne", new List<string> { "Pizza" } }
             };
