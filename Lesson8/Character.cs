@@ -11,7 +11,7 @@ namespace Lesson8
         public int DefenseStrength { get; set; }
         public int HealthBar { get; set; }
 
-        public abstract void Attack();
-        public abstract void Defend();
+        public abstract void Attack(Character opponent);
+        public abstract void Defend(Character opponent);
     }
 }

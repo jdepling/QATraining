@@ -17,9 +17,9 @@ namespace Lesson8.Heros.Spells
             HealthPointEffect = 1000;
         }
 
-        public void Cast()
+        public void Cast(string name)
         {
-            Console.WriteLine("You have cast a healing spell. Your health has increased by {0} This cost {1} manna points", HealthPointEffect, MannaCost);
+            Console.WriteLine("{0} casts a healing spell. Health has increased by {0}. This cost {1} manna points", HealthPointEffect, MannaCost, name);
         }
     }
 }

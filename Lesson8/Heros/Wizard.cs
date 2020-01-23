@@ -28,13 +28,16 @@ namespace Lesson8
         /// This will call the Hero.Defend() and then
         /// this will do something specific to the wizard
         /// </summary>
-        public override void Defend()
+        public override void Defend(Character opponent)
         {
-            base.Defend(); // This will call the Defend() in the Hero class
+            base.Defend(opponent); // This will call the Defend() in the Hero class
 
-            // When a wizard defends he gets more manna
-            MannaCount += 200;
-            Console.WriteLine("You wizard has earned 200 Manna points");
+            if(HealthBar > 0)
+            {
+                // When a wizard defends he gets more manna
+                MannaCount += 200;
+                Console.WriteLine("{0} [wizard] has earned 200 Manna points", Name);
+            }
         }
 
         /// <summary>
@@ -49,7 +52,7 @@ namespace Lesson8
             {
                 // Generate the message
                 var damageMessage  = $"dealing {spell.HealthPointEffect} damage";
-                var healingMessage = $"giving you {spell.HealthPointEffect} health points";
+                var healingMessage = $"giving {Name} {spell.HealthPointEffect} health points";
                 var message        = "";
 
                 switch (spell.Type)
@@ -59,7 +62,7 @@ namespace Lesson8
                         break;
                     case SpellType.Heal:
                         message = healingMessage;
-                        HealthBar += spell.HealthPointEffect; // Increase your health bar
+                        HealthBar += spell.HealthPointEffect; // Increase wizard health bar
                         break;
                 }
 
@@ -67,7 +70,7 @@ namespace Lesson8
                 MannaCount -= spell.MannaCost;
 
                 // Cast the spell
-                spell.Cast();
+                spell.Cast(Name);
             }
             else
             {

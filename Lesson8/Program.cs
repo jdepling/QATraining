@@ -7,16 +7,25 @@ namespace Lesson8
     {
         static void Main(string[] args)
         {
+            // Test Monster
+            Monster monster = new Monster()
+            {
+                Name = "monster",
+                AttackStrength = 100,
+                DefenseStrength = 100,
+                HealthBar = 100
+            };
+
             // Dwarf Hero
             Dwarf dwarfy = new Dwarf("Dwarfy", Gender.Male);
-            dwarfy.Attack();
+            dwarfy.Attack(monster);
             dwarfy.DrinkPotion(PotionName.MegaPotion);
 
             // Wizard Hero
             Wizard Gandolf = new Wizard("Gandolf", Gender.Male);
-            Gandolf.Attack();
+            Gandolf.Attack(monster);
             Gandolf.CastSpell(SpellName.FireBall);
-            Gandolf.Defend();
+            Gandolf.Defend(monster);
         }
     }
 }

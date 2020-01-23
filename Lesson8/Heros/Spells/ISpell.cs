@@ -10,7 +10,7 @@ namespace Lesson8.Heros.Spells
         int MannaCost { get; set; }
         SpellType Type { get; set; }
         int HealthPointEffect { get; set; }
-        void Cast();
+        void Cast(string HeroName);
     }
 
 }

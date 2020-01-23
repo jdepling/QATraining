@@ -20,12 +20,27 @@ namespace Lesson8
         /// Also, I decided to give the defend method an implementation because I don't want to make this same exact method in every single
         /// class that inherits from hero
         /// </summary>
-        public override void Defend()
+        public override void Defend(Character opponent)
         {
-            Console.WriteLine("Using your defense strength you were able to block {0} points of damage", DefenseStrength);
+            int damageDone = 0;
+            if (opponent.AttackStrength > DefenseStrength)
+            {
+                // Calculate damage done to hero
+                damageDone = opponent.AttackStrength - DefenseStrength;
+                Console.WriteLine("You are protected by {0} points", Virtue);
+                damageDone -= Virtue;
+
+                if (damageDone > 0)
+                    HealthBar -= damageDone;
+                else
+                    damageDone = 0;
+            }
+
+            Console.WriteLine("{0} attacks {1}!", opponent.Name, Name);
+            Console.WriteLine("{2} uses {3} defense strength and blocks {0} points of damage. Damage received: {1}", DefenseStrength, damageDone, Name, ProNoun);
         }
 
-        public override void Attack()
+        public override void Attack(Character opponent)
         {
             Console.WriteLine("{0} [{4}], attacks with {1} {2} and deals {3} damage points ", Name, ProNoun, Weapon, AttackStrength, GetType().Name);
         }
