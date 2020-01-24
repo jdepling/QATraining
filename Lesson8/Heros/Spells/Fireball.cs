@@ -17,9 +17,9 @@ namespace Lesson8.Heros.Spells
             HealthPointEffect = 500;
         }
 
-        public void Cast(string Name)
+        public void Cast(string wizardName, string targetName)
         {
-            Console.WriteLine("{2} casts a fireball and deals {0} damage. This cost {1} manna points", HealthPointEffect, MannaCost, Name);
+            Console.WriteLine("{2} casts a fireball and deals {0} damage to {3}. This cost {1} manna points", HealthPointEffect, MannaCost, wizardName, targetName);
         }
     }
 }

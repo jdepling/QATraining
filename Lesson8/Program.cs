@@ -10,24 +10,24 @@ namespace Lesson8
             // Test Monster
             Monster monster = new Monster()
             {
-                Name = "monster",
-                AttackStrength = 100,
+                Name            = "monster",
+                AttackStrength  = 100,
                 DefenseStrength = 100,
-                HealthBar = 100
+                HealthBar       = 100
             };
 
             // Heros
-            Dwarf dwarfy = new Dwarf("Dwarfy", Gender.Male);
+            Dwarf Dwarfy   = new Dwarf("Dwarfy", Gender.Male);
             Wizard Gandolf = new Wizard("Gandolf", Gender.Male);
-            
+
             // Dwarfy attacks 
-            dwarfy.Attack(monster);
+            Dwarfy.Attack(monster);
 
             // Monster defends itself
-            monster.Defend(dwarfy);
+            monster.Defend(Dwarfy);
 
             // Dwarfy is thirsty
-            dwarfy.DrinkPotion(PotionName.MegaPotion);
+            Dwarfy.DrinkPotion(PotionName.MegaPotion);
 
             // Gandolf decides to do something useful
             Gandolf.Attack(monster);
@@ -36,7 +36,7 @@ namespace Lesson8
             monster.Defend(Gandolf);
 
             // Gandolf wises up and uses his freaking magic
-            Gandolf.CastSpell(SpellName.FireBall);
+            Gandolf.CastSpell(SpellName.FireBall, monster);
 
             // Monster gets pissed and attacks Gandolf
             monster.Attack(Gandolf);

@@ -43,7 +43,7 @@ namespace Lesson8
         /// <summary>
         /// Only a wizard can cast a spell, so this method is in the Wizard class
         /// </summary>
-        public void CastSpell(SpellName name)
+        public void CastSpell(SpellName name, Character target)
         {
             // Look up spell
             ISpell spell = Spells.Where(s => s.Name == name).FirstOrDefault();
@@ -52,7 +52,7 @@ namespace Lesson8
             {
                 // Generate the message
                 var damageMessage  = $"dealing {spell.HealthPointEffect} damage";
-                var healingMessage = $"giving {Name} {spell.HealthPointEffect} health points";
+                var healingMessage = $"giving {target.Name} {spell.HealthPointEffect} health points";
                 var message        = "";
 
                 switch (spell.Type)
@@ -62,7 +62,7 @@ namespace Lesson8
                         break;
                     case SpellType.Heal:
                         message = healingMessage;
-                        HealthBar += spell.HealthPointEffect; // Increase wizard health bar
+                        target.HealthBar += spell.HealthPointEffect;
                         break;
                 }
 
@@ -70,7 +70,7 @@ namespace Lesson8
                 MannaCount -= spell.MannaCost;
 
                 // Cast the spell
-                spell.Cast(Name);
+                spell.Cast(Name, target.Name);
             }
             else
             {
