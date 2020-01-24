@@ -36,7 +36,6 @@ namespace Lesson8
                     damageDone = 0;
             }
 
-            Console.WriteLine("{0} attacks {1}!", opponent.Name, Name);
             Console.WriteLine("{2} uses {3} defense strength and blocks {0} points of damage. Damage received: {1}", DefenseStrength, damageDone, Name, ProNoun);
         }
 

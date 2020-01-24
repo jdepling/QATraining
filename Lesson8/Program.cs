@@ -16,15 +16,32 @@ namespace Lesson8
                 HealthBar = 100
             };
 
-            // Dwarf Hero
+            // Heros
             Dwarf dwarfy = new Dwarf("Dwarfy", Gender.Male);
+            Wizard Gandolf = new Wizard("Gandolf", Gender.Male);
+            
+            // Dwarfy attacks 
             dwarfy.Attack(monster);
+
+            // Monster defends itself
+            monster.Defend(dwarfy);
+
+            // Dwarfy is thirsty
             dwarfy.DrinkPotion(PotionName.MegaPotion);
 
-            // Wizard Hero
-            Wizard Gandolf = new Wizard("Gandolf", Gender.Male);
+            // Gandolf decides to do something useful
             Gandolf.Attack(monster);
+
+            // Monster defends itself
+            monster.Defend(Gandolf);
+
+            // Gandolf wises up and uses his freaking magic
             Gandolf.CastSpell(SpellName.FireBall);
+
+            // Monster gets pissed and attacks Gandolf
+            monster.Attack(Gandolf);
+
+            // Gandolf defends against monster
             Gandolf.Defend(monster);
         }
     }

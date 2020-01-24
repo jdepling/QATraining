@@ -20,7 +20,7 @@ namespace Lesson8
                 HealthBar -= damageToMonster;
             }
 
-            Console.WriteLine("{0} blocks {1} of damage", Name, DefenseStrength);
+            Console.WriteLine("{0} blocks {1} points of damage", Name, DefenseStrength);
             Console.WriteLine("{0} receives {1} damage", Name, damageToMonster);
 
         }

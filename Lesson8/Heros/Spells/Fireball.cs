@@ -19,7 +19,7 @@ namespace Lesson8.Heros.Spells
 
         public void Cast(string Name)
         {
-            Console.WriteLine("{0} fireball and have dealt {0} damage. This cost {1} manna points", HealthPointEffect, MannaCost, Name);
+            Console.WriteLine("{2} casts a fireball and deals {0} damage. This cost {1} manna points", HealthPointEffect, MannaCost, Name);
         }
     }
 }
