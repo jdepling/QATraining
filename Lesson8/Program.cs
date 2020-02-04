@@ -43,6 +43,9 @@ namespace Lesson8
 
             // Gandolf defends against monster
             Gandolf.Defend(monster);
+
+            // Roll the dice
+            Dice.Roll();
         }
     }
 }
