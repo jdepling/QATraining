@@ -9,7 +9,7 @@ namespace QABank.UnitTests
         /// Tests to make sure that making a deposit will affect the balance in an expected way
         /// </summary>
         [Fact]
-        public void Deposit_AddsToBalance_Valid()
+        public void Deposit_ValidInput_AddsToBalance()
         {
             // Arrange
             var testChecking = new Checking("Test Checking Account");
@@ -25,7 +25,7 @@ namespace QABank.UnitTests
         /// Tests to make sure that making a deposit will affect the balance in an expected way
         /// </summary>
         [Fact]
-        public void Deposit_AddsToBalance_NotValid()
+        public void Deposit_InvalidInput_DoesNothing()
         {
             // Arrange
             var testChecking = new Checking("Test Checking Account");
@@ -45,7 +45,7 @@ namespace QABank.UnitTests
         [Theory]
         [InlineData(1000, 100, 900)]
         [InlineData(1000,-100, 1000)]
-        public void Withdraw_SubtractsFromBalance(double originalAmount, double withdrawAmount, double expectedAmount)
+        public void Withdraw_GoodAndBadInput_SubtractsFromBalanceIfValid(double originalAmount, double withdrawAmount, double expectedAmount)
         {
             // Arrange
             var test = new Checking("test");
