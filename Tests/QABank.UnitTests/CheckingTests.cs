@@ -57,5 +57,34 @@ namespace QABank.UnitTests
             // Assert
             test.Balance.Should().Be(expectedAmount);
         }
+
+        [Theory]
+        [InlineData(1000, 800, 500, 500, 1300)] // Valid input, sufficient fund scenario
+        [InlineData(300, 800, 500, 300, 800)]   // Valid input, insufficient funds
+        [InlineData(1000, 800, -500, 1000, 800)]
+
+        public void Transfer_GoodAndBadInputWithSufficientAndInsufficientFunds_BalancesAreExpected(
+            double sourceCheckingInitialAmount,
+            double destinationCheckingInitialAmount,
+            double transferAmount,
+            double sourceCheckingFinalAmount,
+            double destinationCheckingFinalAmount)
+        {
+            // Arrange
+            var destinationChecking = new Checking("New Checking Account");
+            var sourceCheckingAccount = new Checking("Source Checking Account");
+
+            destinationChecking.Deposit(destinationCheckingInitialAmount);
+
+            sourceCheckingAccount.Deposit(sourceCheckingInitialAmount);
+
+            // Act
+            sourceCheckingAccount.Transfer(transferAmount, sourceCheckingAccount, destinationChecking);
+
+            // Assert
+            destinationChecking.Balance.Should().Be(destinationCheckingFinalAmount);
+            sourceCheckingAccount.Balance.Should().Be(sourceCheckingFinalAmount);
+
+        }
     }
 }
