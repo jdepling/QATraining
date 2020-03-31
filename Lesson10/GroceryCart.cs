@@ -34,5 +34,11 @@ namespace Lesson10
         {
             _cart.Add(item, quantity);
         }
+
+        public Dictionary<Item, double> CheckCart()
+        {
+            return _cart;
+        }
+
     }
 }
