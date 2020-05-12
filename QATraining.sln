@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestingBasics.UnitTest"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI Automation", "UI Automation", "{1BA3E70F-FF00-4503-807D-B3D1F2CC9FF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice1", "UI Automation\Practice1\Practice1.csproj", "{3255C3EF-0814-4D77-A978-4AF56C1EDC35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI Test Practice 1", "UI Automation\Practice1\UI Test Practice 1.csproj", "{3255C3EF-0814-4D77-A978-4AF56C1EDC35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,12 +8,14 @@ namespace Practice1
 {
     /// <summary>
     /// Instructions:
-    /// 1. Download IEDriverServer: http://selenium-release.storage.googleapis.com/index.html?path=3.14/ ... if you want chrome then you need to select chrome
-    /// 2. Save the exe in your bin
-    /// 3. Use nuget package manager to install Selenium.WebDriver
-    /// 4. Make sure to put "OpenQA.Selenium" in your usings
-    /// 5. If using IE, I find that adding the site that you want to test to "trusted sites" works better: https://seleniumie.blogspot.com/2015/01/no-such-window-exception-or-unable-to.html
-    /// 6. Explanation of how to do a setup and teardown in xunit: https://stackoverflow.com/questions/12976319/xunit-net-global-setup-teardown
+    /// 1. In order to use selenium you need Selenium.WebDriver and a driver for your browser. 
+    /// This project has both of them. They were obtained via nuget package manager. 
+    /// I recommend that way as opposed to downloading it yourself. 
+    /// This project only has IEWedriver in it. If you want Chrome you will need to install it yourself :)
+    /// 2. You can go to nuget package manager here, select "installed" and you will see what I have already installed.
+    /// 3. Make sure to put "OpenQA.Selenium" in your usings
+    /// 4. If using IE, I find that adding the site that you want to test to "trusted sites" works better: https://seleniumie.blogspot.com/2015/01/no-such-window-exception-or-unable-to.html
+    /// 5. Explanation of how to do a setup and teardown in xunit: https://stackoverflow.com/questions/12976319/xunit-net-global-setup-teardown
     /// </summary>
     public class Benefits: IClassFixture<TestsFixture>
     {
