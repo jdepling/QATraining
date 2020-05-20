@@ -20,7 +20,8 @@ namespace Practice1.Helpers
         // This will run only once, but will setup our tests
         public TestsFixture()
         {
-            var browser = Browser.FireFox;
+            var browser = Browser.Chrome;
+
             switch (browser)
             {
                 case Browser.Chrome:

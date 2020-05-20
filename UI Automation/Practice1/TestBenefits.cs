@@ -1,7 +1,7 @@
-using OpenQA.Selenium;
-using Practice1.Helpers;
 using System.Collections.Generic;
 using System.Linq;
+using OpenQA.Selenium;
+using Practice1.Helpers;
 using Xunit;
 
 namespace Practice1
@@ -21,7 +21,7 @@ namespace Practice1
     public class TestBenefits: IClassFixture<TestsFixture>
     {
         IWebDriver Driver { get; }
-
+        
         public TestBenefits(TestsFixture data)
         {
             Driver = data.Driver;
@@ -34,7 +34,7 @@ namespace Practice1
         public void DoWeHaveTheBenefits()
         {
             // Arrange
-            IEnumerable<string> expectedBenefits = new List<string>{ // Our expected benefits 
+            List<string> expectedBenefits = new List<string>{ // Our expected benefits 
                 "Pet Insurance",
                 //"Bonding Leave", // Note: this one is not on the page, therefore it will fail
                 "Adoption Assistance",
@@ -47,10 +47,10 @@ namespace Practice1
             // Act
             Driver.FindElements(By.ClassName("avia-menu-text")).Where(element => element.Text == "Benefits").FirstOrDefault().Click();
             IEnumerable<IWebElement> h2headings = Driver.FindElements(By.TagName("h2"));  // Find all the h2s
-            List<string> h2Text = h2headings.Select(h => h.Text).ToList();               // extract all the text from the h2s
+            List<string> h2Text = h2headings.Select(headElement => headElement.Text).ToList();               // extract all the text from the h2s
             
             // Assert
-            expectedBenefits.ToList().ForEach(expected =>
+            expectedBenefits.ForEach(expected =>
             {
                 bool weGotIt = h2Text.Contains(expected);
                 Assert.True(weGotIt, string.Format("Benefit was not found: {0}", expected));
@@ -64,7 +64,7 @@ namespace Practice1
         /// 2. LinkText that wasn't nested in another element
         /// </summary>
         [Fact]
-        public void Test()
+        public void Diversity()
         {
             // Arrange
             string expected = "Diversity";
@@ -75,6 +75,23 @@ namespace Practice1
 
             // Assert
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Tuition()
+        {
+            // Arrange
+            string expected = "$5,250";
+            Driver.FindElements(By.ClassName("avia-menu-text")).Where(element => element.Text == "Employee Development").FirstOrDefault().Click();
+
+            // Act
+            IWebElement tuitionHeader = Driver.FindElements(By.TagName("h2")).ToList().Where(element => element.Text == "Tuition Reimbursement").FirstOrDefault();
+            IWebElement p = tuitionHeader.FindElement(By.XPath(".//following-sibling::p"));
+
+            bool match = p.Text.Contains(expected);
+
+            // Assert 
+            Assert.True(match, string.Format("{0} was not found in the tuition reimbursement paragraph", expected));
         }
     }
 }
