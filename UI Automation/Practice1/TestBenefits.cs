@@ -15,13 +15,14 @@ namespace Practice1
     /// 2. You can go to nuget package manager here, select "installed" and you will see what I have already installed.
     /// 3. Make sure to put "OpenQA.Selenium" in your usings
     /// 4. If using IE, I find that adding the site that you want to test to "trusted sites" works better: https://seleniumie.blogspot.com/2015/01/no-such-window-exception-or-unable-to.html
+    /// But really... here we just use chrome
     /// 5. Explanation of how to do a setup and teardown in xunit: https://stackoverflow.com/questions/12976319/xunit-net-global-setup-teardown
     /// </summary>
-    public class Benefits: IClassFixture<TestsFixture>
+    public class TestBenefits: IClassFixture<TestsFixture>
     {
         IWebDriver Driver { get; }
 
-        public Benefits(TestsFixture data)
+        public TestBenefits(TestsFixture data)
         {
             Driver = data.Driver;
         }
@@ -44,6 +45,7 @@ namespace Practice1
             };
 
             // Act
+            Driver.FindElements(By.ClassName("avia-menu-text")).Where(element => element.Text == "Benefits").FirstOrDefault().Click();
             IEnumerable<IWebElement> h2headings = Driver.FindElements(By.TagName("h2"));  // Find all the h2s
             List<string> h2Text = h2headings.Select(h => h.Text).ToList();               // extract all the text from the h2s
             
