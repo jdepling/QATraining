@@ -44,6 +44,7 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI Test Practice 1", "UI Automation\Practice1\UI Test Practice 1.csproj", "{3255C3EF-0814-4D77-A978-4AF56C1EDC35}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MattXUnitTests", "MattXUnitTests\MattXUnitTests.csproj", "{9EDDA496-029B-4BA9-8746-16216570E6B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITestPractice2", "UITestPractice2\UITestPractice2.csproj", "{64978C12-210D-48DB-BDE4-8E90BF216FDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +128,10 @@ Global
 		{9EDDA496-029B-4BA9-8746-16216570E6B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EDDA496-029B-4BA9-8746-16216570E6B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EDDA496-029B-4BA9-8746-16216570E6B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64978C12-210D-48DB-BDE4-8E90BF216FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64978C12-210D-48DB-BDE4-8E90BF216FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64978C12-210D-48DB-BDE4-8E90BF216FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64978C12-210D-48DB-BDE4-8E90BF216FDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +141,7 @@ Global
 		{710D8587-2E25-4C47-9505-CDF849EF9A6B} = {AEC34153-2B6B-466D-819A-ECD986E39098}
 		{1B139C60-DF4A-4D43-A6A1-86E738B55D65} = {AEC34153-2B6B-466D-819A-ECD986E39098}
 		{3255C3EF-0814-4D77-A978-4AF56C1EDC35} = {1BA3E70F-FF00-4503-807D-B3D1F2CC9FF4}
+		{64978C12-210D-48DB-BDE4-8E90BF216FDC} = {1BA3E70F-FF00-4503-807D-B3D1F2CC9FF4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {02C867C1-E7DD-4AF2-8943-EF7705545D49}
